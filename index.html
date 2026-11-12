@@ -3,11 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Servicio Posventa RNLT Chacao - Renault Care Service</title>
+  <title>Servicio Posventa RNLT Chacao - VOLGAN RENAULT CARE SERVICE</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Phosphor Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --renault-yellow: #FFCC00;
@@ -16,31 +20,41 @@
     body {
       background-color: #F8FAFC;
       color: #0F172A;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between">
+<body class="min-h-screen flex flex-col justify-between pb-24 md:pb-0">
 
   <!-- ENCABEZADO CORPORATIVO -->
   <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div class="max-w-6xl mx-auto px-4 py-3.5 flex flex-col sm:flex-row items-center justify-between gap-3">
       <div class="flex items-center gap-3">
-        <div class="w-11 h-11 bg-slate-950 rounded-lg flex items-center justify-center text-[#FFCC00] shadow-sm">
-          <i class="ph-bold ph-sketch-logo text-2xl"></i>
+        <!-- Logo Rombo Renault SVG -->
+        <div class="w-11 h-11 bg-slate-950 rounded-xl flex items-center justify-center text-[#FFCC00] shadow-sm shrink-0">
+          <svg viewBox="0 0 100 120" class="w-6 h-7 fill-current" aria-hidden="true">
+            <path d="M50 4 L92 60 L50 116 L8 60 Z M50 24 L23 60 L50 96 L77 60 Z" />
+          </svg>
         </div>
         <div>
-          <h1 class="text-xl font-bold tracking-tight text-slate-900 leading-tight">
+          <h1 class="text-lg sm:text-xl font-extrabold tracking-tight text-slate-900 leading-tight">
             Servicio Posventa RNLT Chacao
           </h1>
-          <p class="text-xs font-semibold tracking-wider uppercase text-slate-500">
-            Taller Autorizado <span class="text-slate-900">RENAULT CARE SERVICE</span>
+          <p class="text-[11px] font-bold tracking-wider uppercase text-slate-500">
+            Taller Autorizado <span class="text-slate-950">VOLGAN RENAULT CARE SERVICE</span>
           </p>
         </div>
       </div>
 
       <div class="flex items-center gap-2">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> Taller Abierto | Citas Disponibles
         </span>
       </div>
@@ -48,51 +62,93 @@
   </header>
 
   <!-- CONTENIDO PRINCIPAL -->
-  <main class="max-w-6xl mx-auto px-4 py-8 flex-1 w-full space-y-8">
+  <main class="max-w-6xl mx-auto px-4 py-7 flex-1 w-full space-y-7">
 
     <!-- SECCIÓN DE BIENVENIDA -->
     <section class="text-center max-w-2xl mx-auto">
-      <h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">
-        Consulta y Agenda tu Mantenimiento Renault
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+        Cotiza y Agenda tu Mantenimiento Renault
       </h2>
       <p class="text-slate-600 mt-2 text-sm sm:text-base">
-        Selecciona tu modelo y el kilometraje que le corresponde a tu vehículo para conocer el desglose exacto de repuestos, diagnósticos y cotización oficial.
+        Selecciona tu modelo y el kilometraje actual de tu vehículo para calcular automáticamente el plan correspondiente, repuestos genuinos y cotización oficial.
       </p>
     </section>
 
     <!-- PASO 1: SELECTOR DE MODELO -->
-    <section class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-      <div class="flex items-center gap-2 mb-4">
-        <span class="w-6 h-6 rounded-full bg-amber-400 text-slate-950 font-bold text-xs flex items-center justify-center">1</span>
-        <h3 class="font-bold text-slate-900 text-lg">Selecciona el Modelo de tu Vehículo</h3>
+    <section class="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-sm">
+      <div class="flex items-center gap-2.5 mb-4">
+        <span class="w-6 h-6 rounded-full bg-[#FFCC00] text-slate-950 font-extrabold text-xs flex items-center justify-center shrink-0">1</span>
+        <h3 class="font-bold text-slate-900 text-base sm:text-lg">Selecciona el Modelo de tu Vehículo</h3>
       </div>
       <div id="modelContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         <!-- Render dinámico -->
       </div>
     </section>
 
-    <!-- PASO 2: SELECTOR DE INTERVALO / KILOMETRAJE -->
-    <section class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-      <div class="flex items-center gap-2 mb-4">
-        <span class="w-6 h-6 rounded-full bg-amber-400 text-slate-950 font-bold text-xs flex items-center justify-center">2</span>
-        <h3 class="font-bold text-slate-900 text-lg">Selecciona el Intervalo de Mantenimiento</h3>
+    <!-- PASO 2: SELECTOR INTELIGENTE DE KILOMETRAJE Y PAQUETE -->
+    <section class="bg-white p-5 sm:p-6 rounded-2xl border border-slate-200 shadow-sm space-y-5">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div class="flex items-center gap-2.5">
+          <span class="w-6 h-6 rounded-full bg-[#FFCC00] text-slate-950 font-extrabold text-xs flex items-center justify-center shrink-0">2</span>
+          <h3 class="font-bold text-slate-900 text-base sm:text-lg">Indica el Kilometraje de tu Vehículo</h3>
+        </div>
+        <span class="text-xs font-medium text-slate-500 bg-slate-100 px-2.5 py-1 rounded-md self-start sm:self-auto">
+          El plan se asigna automáticamente según el km
+        </span>
       </div>
 
-      <div id="tierContainer" class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <!-- Render dinámico de los 3 paquetes -->
+      <!-- Selector rápido de Kilometraje + Input exacto -->
+      <div class="bg-slate-50 p-4 rounded-xl border border-slate-200/80 space-y-3">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <label for="kmExactInput" class="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
+            <i class="ph-bold ph-gauge text-base text-amber-500"></i>
+            Kilometraje actual o próximo servicio:
+          </label>
+          <div class="relative w-full sm:w-56">
+            <input
+              type="number"
+              id="kmExactInput"
+              min="1000"
+              max="300000"
+              step="500"
+              placeholder="Ej: 30000"
+              oninput="handleExactKmInput(this.value)"
+              class="w-full pl-3.5 pr-10 py-2 text-sm font-bold text-slate-900 bg-white border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#FFCC00] focus:border-slate-900"
+            />
+            <span class="absolute right-3 top-2.5 text-xs font-bold text-slate-400">km</span>
+          </div>
+        </div>
+
+        <!-- Chips de intervalos estándar -->
+        <div>
+          <p class="text-[11px] font-semibold text-slate-500 mb-2">O haz clic en el intervalo más cercano:</p>
+          <div id="kmGridSelector" class="grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-10 gap-1.5">
+            <!-- Botones de 5.000 km a 100.000 km renderizados por JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjetas de los 3 Paquetes (sincronizadas con el km seleccionado) -->
+      <div>
+        <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-2.5">Plan de Mantenimiento Asignado:</p>
+        <div id="tierContainer" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <!-- Render dinámico de los 3 paquetes -->
+        </div>
       </div>
 
       <!-- Selector Opcional de Inyectores para Nivel 2 -->
-      <div id="injectorToggleContainer" class="hidden mt-4 pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3 bg-slate-50 p-4 rounded-xl">
+      <div id="injectorToggleContainer" class="hidden pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-amber-50/60 border border-amber-200/70 p-4 rounded-xl">
         <div class="text-sm">
-          <p class="font-semibold text-slate-900">Servicio de Inyectores (Opcional):</p>
-          <p class="text-xs text-slate-500">Puedes incluir o excluir el desmontaje y limpieza por ultrasonido de inyectores.</p>
+          <p class="font-bold text-slate-900 flex items-center gap-1.5">
+            <i class="ph-bold ph-sliders text-amber-600"></i> Servicio de Inyectores (Opcional):
+          </p>
+          <p class="text-xs text-slate-600 mt-0.5">Incluye desmontaje, limpieza por ultrasonido y kit de microfiltros/o-rings.</p>
         </div>
-        <div class="inline-flex rounded-lg border border-slate-200 bg-white p-1">
-          <button id="btnSinIny" onclick="setInjectorOption(false)" class="px-3 py-1.5 rounded-md text-xs font-semibold transition-colors">
+        <div class="inline-flex rounded-lg border border-slate-200 bg-white p-1 shrink-0 w-full sm:w-auto">
+          <button id="btnSinIny" onclick="setInjectorOption(false)" class="flex-1 sm:flex-initial px-3.5 py-2 rounded-md text-xs font-semibold transition-colors">
             Sin Limpieza Iny.
           </button>
-          <button id="btnConIny" onclick="setInjectorOption(true)" class="px-3 py-1.5 rounded-md text-xs font-semibold transition-colors">
+          <button id="btnConIny" onclick="setInjectorOption(true)" class="flex-1 sm:flex-initial px-3.5 py-2 rounded-md text-xs font-semibold transition-colors">
             Con Limpieza Iny.
           </button>
         </div>
@@ -100,46 +156,46 @@
     </section>
 
     <!-- PASO 3: DETALLE COMPLETO Y TOTALES -->
-    <section class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-      <div class="p-6 bg-slate-900 text-white flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <section id="quoteDetailSection" class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+      <div class="p-5 sm:p-6 bg-slate-950 text-white flex flex-col lg:flex-row lg:items-center justify-between gap-5">
         <div>
-          <span class="text-xs font-semibold uppercase tracking-wider text-amber-400">Cotización Vigente</span>
-          <h4 id="detailTitle" class="text-xl font-bold mt-1">Duster 1.6 Manual — Mantenimiento Preventivo</h4>
-          <p id="detailSubtitle" class="text-xs text-slate-300 mt-0.5">Kilómetros aplicables: 5.000 | 15.000 | 25.000...</p>
-        </div>
-        <div class="flex flex-wrap items-center gap-3">
-          <!-- Precio en Divisas -->
-          <div class="bg-amber-400 text-slate-950 px-4 py-2 rounded-xl text-right">
-            <span class="block text-[10px] font-bold uppercase tracking-wider">Pago en Divisas (10% Desc.)</span>
-            <div class="flex items-baseline justify-end gap-1">
-              <span id="priceDivisa" class="text-2xl font-black">257,87$</span>
-            </div>
-            <span id="badgeAhorro" class="block text-[11px] font-bold text-slate-900 bg-amber-300 px-1.5 py-0.5 rounded mt-0.5 text-center">
-              ¡Ahorras 28,65$!
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-xs font-bold uppercase tracking-wider text-[#FFCC00]">Cotización Oficial</span>
+            <span id="selectedKmBadge" class="text-xs font-bold bg-slate-800 text-slate-200 px-2.5 py-0.5 rounded-full border border-slate-700">
+              Kilometraje: 5.000 km
             </span>
           </div>
+          <h4 id="detailTitle" class="text-xl sm:text-2xl font-extrabold mt-1.5">Duster 1,6 Manual — Preventivo Básico</h4>
+          <p id="detailSubtitle" class="text-xs text-slate-400 mt-1">Duración estimada en taller: 1.5 horas</p>
+        </div>
 
-          <!-- Precio en Bs -->
-          <div class="bg-slate-800 text-white px-4 py-2 rounded-xl text-right border border-slate-700">
-            <span class="block text-[10px] font-semibold uppercase tracking-wider text-slate-300">Pago en Bs</span>
-            <span id="priceBs" class="text-2xl font-black">286,52$</span>
+        <div class="flex items-stretch">
+          <!-- Total del Servicio -->
+          <div class="w-full sm:w-auto bg-[#FFCC00] text-slate-950 px-6 py-3 rounded-xl text-right min-w-[200px]">
+            <span class="block text-[10px] font-extrabold uppercase tracking-wider">Total Estimado del Servicio</span>
+            <div class="flex items-baseline justify-end gap-1 mt-0.5">
+              <span id="totalPriceDisplay" class="text-2xl sm:text-3xl font-extrabold tracking-tight">$286,52</span>
+            </div>
+            <span class="block text-[11px] font-bold text-slate-900 mt-0.5">
+              Repuestos + Mano de Obra
+            </span>
           </div>
         </div>
       </div>
 
       <!-- DESGLOSE DE REPUESTOS Y DIAGNÓSTICOS -->
-      <div class="p-6 space-y-6">
+      <div class="p-5 sm:p-6 space-y-6">
         <div>
-          <h5 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-2">
-            <i class="ph-bold ph-wrench text-amber-500"></i> Repuestos, Insumos y Mano de Obra
+          <h5 class="text-xs sm:text-sm font-extrabold text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-2">
+            <i class="ph-bold ph-wrench text-amber-500 text-base"></i> Repuestos Genuinos, Insumos y Mano de Obra
           </h5>
-          <div class="overflow-x-auto">
+          <div class="overflow-x-auto rounded-xl border border-slate-200">
             <table class="w-full text-left text-sm">
-              <thead class="bg-slate-50 text-slate-600 text-xs uppercase font-semibold border-y border-slate-200">
+              <thead class="bg-slate-50 text-slate-600 text-xs uppercase font-bold border-b border-slate-200">
                 <tr>
-                  <th class="py-2.5 px-4">Concepto / Repuesto</th>
-                  <th class="py-2.5 px-4 text-center">Cant.</th>
-                  <th class="py-2.5 px-4 text-right">Precio Ref.</th>
+                  <th class="py-3 px-4">Concepto / Repuesto</th>
+                  <th class="py-3 px-4 text-center">Cant.</th>
+                  <th class="py-3 px-4 text-right">Precio Ref.</th>
                 </tr>
               </thead>
               <tbody id="billableItemsTbody" class="divide-y divide-slate-100">
@@ -150,46 +206,52 @@
         </div>
 
         <div>
-          <h5 class="text-sm font-bold text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-2">
-            <i class="ph-bold ph-check-circle text-emerald-500"></i> Diagnósticos e Inspecciones de Seguridad Incluidas
+          <h5 class="text-xs sm:text-sm font-extrabold text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-2">
+            <i class="ph-bold ph-check-circle text-emerald-600 text-base"></i> Diagnósticos e Inspecciones de Seguridad Incluidas
           </h5>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5" id="diagnosticItemsContainer">
             <!-- Puntos de revisión con etiqueta INCLUIDO -->
           </div>
         </div>
 
-        <!-- BOTÓN DE ACCIÓN PRINCIPAL: AGENDAR CITA -->
-        <div class="pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div class="text-xs text-slate-500">
+        <!-- BOTÓN DE ACCIÓN PRINCIPAL: AGENDAR CITA DIRECTO -->
+        <div class="pt-6 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div class="text-xs text-slate-500 space-y-1">
             <p>* Los trabajos o productos adicionales se realizan según las necesidades del vehículo y previa aprobación del cliente.</p>
-            <p>* Precios de referencia sujetos a verificación previa en taller antes de la orden de servicio.</p>
+            <p>* Precios de referencia sujetos a verificación previa en taller antes de emitir la orden de servicio.</p>
           </div>
-          <button onclick="abrirModalKilometraje()" class="w-full sm:w-auto px-8 py-3.5 bg-slate-950 hover:bg-slate-800 text-amber-400 font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-base">
-            <i class="ph-bold ph-calendar-check text-xl"></i>
-            Agendar Cita en Calendly
-          </button>
+          <div class="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto shrink-0">
+            <a id="whatsappContextualBtn" href="#" target="_blank" class="w-full sm:w-auto px-5 py-3.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 font-bold rounded-xl transition-all flex items-center justify-center gap-2 text-sm">
+              <i class="ph-bold ph-whatsapp-logo text-lg text-emerald-600"></i>
+              Consultar Plan
+            </a>
+            <button onclick="agendarEnCalendlyDirecto()" class="w-full sm:w-auto px-7 py-3.5 bg-slate-950 hover:bg-slate-800 text-[#FFCC00] font-extrabold rounded-xl shadow-md transition-all flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer">
+              <i class="ph-bold ph-calendar-check text-xl"></i>
+              Agendar Cita (<span id="btnKmLabel">5.000 km</span>)
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- SELLOS DE GARANTÍA RENAULT -->
-    <section class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4">
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
       <div class="bg-white p-4 rounded-xl border border-slate-200 flex items-start gap-3">
-        <i class="ph-fill ph-seal-check text-2xl text-amber-500 mt-0.5"></i>
+        <i class="ph-fill ph-seal-check text-2xl text-amber-500 mt-0.5 shrink-0"></i>
         <div>
           <h6 class="font-bold text-sm text-slate-900">Repuestos 100% Genuinos</h6>
           <p class="text-xs text-slate-500 mt-0.5">Aceites sintéticos y filtros homologados oficialmente por Renault.</p>
         </div>
       </div>
       <div class="bg-white p-4 rounded-xl border border-slate-200 flex items-start gap-3">
-        <i class="ph-fill ph-certificate text-2xl text-amber-500 mt-0.5"></i>
+        <i class="ph-fill ph-certificate text-2xl text-amber-500 mt-0.5 shrink-0"></i>
         <div>
           <h6 class="font-bold text-sm text-slate-900">Mano de Obra Certificada</h6>
           <p class="text-xs text-slate-500 mt-0.5">Técnicos especializados con escáner oficial Renault Clip.</p>
         </div>
       </div>
       <div class="bg-white p-4 rounded-xl border border-slate-200 flex items-start gap-3">
-        <i class="ph-fill ph-shield-check text-2xl text-emerald-600 mt-0.5"></i>
+        <i class="ph-fill ph-shield-check text-2xl text-emerald-600 mt-0.5 shrink-0"></i>
         <div>
           <h6 class="font-bold text-sm text-slate-900">Garantía de Taller</h6>
           <p class="text-xs text-slate-500 mt-0.5">Diagnóstico transparente y garantía oficial en todos los servicios.</p>
@@ -199,16 +261,30 @@
 
   </main>
 
-  <!-- BOTÓN FLOTANTE DE CONSULTA POR WHATSAPP -->
-  <a href="https://wa.me/584242105766?text=Hola,%20deseo%20hacer%20una%20consulta%20sobre%20el%20servicio%20de%20mantenimiento%20Renault" target="_blank" class="fixed bottom-6 right-6 bg-emerald-600 hover:bg-emerald-700 text-white p-3.5 rounded-full shadow-lg flex items-center gap-2 z-50 text-xs font-bold transition-all hover:scale-105">
-    <i class="ph-bold ph-whatsapp-logo text-2xl"></i>
-    <span class="hidden sm:inline">¿Dudas? Chatea al +58 424 210 5766</span>
+  <!-- BARRA INFERIOR FIJA EN MÓVILES (STICKY BOTTOM BAR) -->
+  <div class="md:hidden fixed bottom-0 inset-x-0 bg-slate-950 text-white border-t border-slate-800 px-4 py-3 z-40 shadow-2xl flex items-center justify-between gap-3">
+    <div>
+      <span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Total Estimado • <span id="mobileBarKm">5.000 km</span></span>
+      <div class="flex items-baseline gap-1.5">
+        <span id="mobileBarPrice" class="text-xl font-extrabold text-[#FFCC00]">$286,52</span>
+      </div>
+    </div>
+    <button onclick="agendarEnCalendlyDirecto()" class="px-4 py-2.5 bg-[#FFCC00] hover:bg-[#E6B800] text-slate-950 font-extrabold rounded-xl text-xs flex items-center gap-1.5 shadow-sm shrink-0">
+      <i class="ph-bold ph-calendar-check text-base"></i>
+      Agendar Cita
+    </button>
+  </div>
+
+  <!-- BOTÓN FLOTANTE DE CONSULTA POR WHATSAPP (ESCRITORIO) -->
+  <a id="floatingWhatsappBtn" href="https://wa.me/584242105766" target="_blank" class="hidden md:flex fixed bottom-6 right-6 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-full shadow-lg items-center gap-2 z-50 text-xs font-bold transition-all hover:scale-105">
+    <i class="ph-bold ph-whatsapp-logo text-xl"></i>
+    <span>¿Dudas? Chatea al +58 424 210 5766</span>
   </a>
 
   <!-- PIE DE PÁGINA -->
   <footer class="bg-white border-t border-slate-200 py-6 mt-12 text-center text-xs text-slate-500">
     <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <p>© 2026 Servicio Posventa RNLT Chacao — Taller Autorizado RENAULT CARE SERVICE.</p>
+      <p>© 2026 Servicio Posventa RNLT Chacao — Taller Autorizado VOLGAN RENAULT CARE SERVICE.</p>
       <div class="flex items-center gap-4">
         <span>Atención directa: +58 424 210 5766</span>
         <span>•</span>
@@ -217,76 +293,29 @@
     </div>
   </footer>
 
-  <!-- MODAL: CONFIRMACIÓN DE KILOMETRAJE ANTES DE CALENDLY (SOLO KILOMETRAJE) -->
-  <div id="modalKilometraje" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm hidden items-center justify-center p-4 z-50">
-    <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-slate-200 space-y-5 animate-in fade-in duration-200">
-      
-      <div class="flex items-start justify-between border-b border-slate-100 pb-3">
-        <div class="flex items-center gap-2">
-          <div class="w-8 h-8 rounded-full bg-amber-400 text-slate-950 flex items-center justify-center font-bold">
-            <i class="ph-bold ph-gauge text-base"></i>
-          </div>
-          <div>
-            <h4 class="font-bold text-slate-900 text-base">Confirma tu Kilometraje</h4>
-            <p class="text-xs text-slate-500">Paso previo para agendar en Calendly</p>
-          </div>
-        </div>
-        <button onclick="cerrarModalKilometraje()" class="text-slate-400 hover:text-slate-700 text-lg">
-          <i class="ph-bold ph-x"></i>
-        </button>
-      </div>
-
-      <!-- MENSAJE OBLIGATORIO DE KILOMETRAJE -->
-      <div class="bg-amber-50 border border-amber-200 p-3.5 rounded-xl text-xs text-amber-900">
-        <strong class="block font-semibold mb-0.5">Por favor, indique o seleccione el kilometraje que tiene su vehículo de acuerdo para asignarle el mantenimiento correspondiente.</strong>
-      </div>
-
-      <!-- CAMPO DE KILOMETRAJE -->
-      <div class="space-y-1.5">
-        <label class="text-xs font-semibold text-slate-700">Kilometraje actual de su vehículo:</label>
-        <div class="relative">
-          <input type="number" id="inputKmUsuario" placeholder="Ej: 32000" class="w-full px-3.5 py-2.5 text-sm border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-amber-400 pl-10" />
-          <i class="ph-bold ph-speedometer absolute left-3 top-3 text-slate-400"></i>
-        </div>
-        <div class="flex flex-wrap gap-1.5 pt-1" id="quickKmChips">
-          <!-- Botones sugeridos -->
-        </div>
-      </div>
-
-      <!-- BOTONES DE ACCIÓN -->
-      <div class="pt-2 flex items-center justify-end gap-2">
-        <button onclick="cerrarModalKilometraje()" class="px-4 py-2 rounded-lg text-xs font-semibold text-slate-600 hover:bg-slate-100">
-          Cancelar
-        </button>
-        <button onclick="confirmarYAgendarCalendly()" class="px-5 py-2.5 rounded-lg text-xs font-bold bg-slate-950 hover:bg-slate-800 text-amber-400 flex items-center gap-1.5 shadow-sm">
-          <i class="ph-bold ph-calendar-check text-base"></i>
-          Continuar a Calendly
-        </button>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- LÓGICA JAVASCRIPT CON DATOS Y FLUJO A CALENDLY -->
+  <!-- LÓGICA JAVASCRIPT CON CÁLCULO DINÁMICO Y SELECCIÓN INTELIGENTE -->
   <script>
+    const STANDARD_KM_INTERVALS = [
+      5000, 10000, 15000, 20000, 25000, 30000, 35000, 40000, 45000, 50000,
+      55000, 60000, 65000, 70000, 75000, 80000, 85000, 90000, 95000, 100000
+    ];
+
     const MAINTENANCE_DATA = {
       duster_16: {
         name: "Duster 1,6 Manual",
+        badge: "Motor 1.6L",
         tiers: {
           t1: {
             name: "Preventivo Básico",
-            kmLabel: "5.000 a 95.000 km",
-            kmList: ["5.000 km", "15.000 km", "25.000 km", "35.000 km", "45.000 km", "55.000 km", "65.000 km", "85.000 km", "95.000 km"],
+            kmRangeLabel: "5k, 15k, 25k, 35k, 45k, 55k, 65k, 75k, 85k, 95k",
             duration: "1.5 horas",
-            priceBs: 286.52,
-            priceDivisa: 257.87,
+            manoObra: 60,
             items: [
               { name: "Aceite 5W30", qty: 5, price: 130 },
               { name: "Filtro de aceite", qty: 1, price: 34.5 },
-              { name: "Arandela de T. de aceite", qty: 1, price: 4 },
+              { name: "Arandela de tapón de aceite", qty: 1, price: 4 },
               { name: "Engine clean", qty: 1, price: 15 },
-              { name: "Líquido limpia parabrisas", qty: 1, price: 4 },
-              { name: "Mano de obra", qty: 1, price: 60 }
+              { name: "Líquido limpiaparabrisas", qty: 1, price: 4 }
             ],
             diagnostics: [
               "Diagnóstico de 40 puntos", "Cambio de aceite", "Diagnóstico de batería",
@@ -295,31 +324,22 @@
           },
           t2: {
             name: "Mantenimiento Mayor",
-            kmLabel: "10.000 a 90.000 km",
-            kmList: ["10.000 km", "30.000 km", "50.000 km", "70.000 km", "90.000 km"],
+            kmRangeLabel: "10k, 30k, 40k, 50k, 60k, 70k, 80k, 90k",
             duration: "2.5 a 3.5 horas",
             hasInjectorOption: true,
-            sinIny: {
-              priceBs: 448.92,
-              priceDivisa: 404.03,
-              manoObra: 140
-            },
-            conIny: {
-              priceBs: 585.80,
-              priceDivisa: 527.22,
-              manoObra: 228
-            },
+            manoObraSinIny: 140,
+            manoObraConIny: 228,
             items: [
               { name: "Aceite 5W30", qty: 5, price: 130 },
               { name: "Filtro de aceite", qty: 1, price: 34.5 },
-              { name: "Arandela de T. de aceite", qty: 1, price: 3.5 },
+              { name: "Arandela de tapón de aceite", qty: 1, price: 3.5 },
               { name: "Engine clean", qty: 1, price: 15 },
-              { name: "Líquido limpia parabrisas", qty: 1, price: 4 },
+              { name: "Líquido limpiaparabrisas", qty: 1, price: 4 },
               { name: "Filtro de aire", qty: 1, price: 22 },
               { name: "Filtro antipolen", qty: 1, price: 26 },
               { name: "Spray limpia evaporador", qty: 1, price: 12 },
-              { name: "Limpia carburador", qty: 1, price: 15 },
-              { name: "Kit de inyectores", qty: 1, price: 15 }
+              { name: "Limpia carburador", qty: 1, price: 15, onlyWithInjectors: true },
+              { name: "Kit de inyectores", qty: 1, price: 15, onlyWithInjectors: true }
             ],
             diagnostics: [
               "Diagnóstico de 40 puntos", "Funcionamiento y engrase de cerraduras", "Diagnóstico de batería",
@@ -331,22 +351,19 @@
           },
           t3: {
             name: "Mantenimiento Integral",
-            kmLabel: "20.000 km | 100.000 km",
-            kmList: ["20.000 km", "100.000 km"],
+            kmRangeLabel: "20.000 km | 100.000 km",
             duration: "3.5 a 4 horas",
-            priceBs: 574.20,
-            priceDivisa: 516.78,
+            manoObra: 180,
             items: [
               { name: "Aceite 5W30", qty: 5, price: 130 },
               { name: "Filtro de aceite", qty: 1, price: 34.5 },
-              { name: "Arandela de T. de aceite", qty: 1, price: 3.5 },
+              { name: "Arandela de tapón de aceite", qty: 1, price: 3.5 },
               { name: "Engine clean", qty: 1, price: 15 },
-              { name: "Líquido limpia parabrisas", qty: 1, price: 4 },
+              { name: "Líquido limpiaparabrisas", qty: 1, price: 4 },
               { name: "Filtro de aire", qty: 1, price: 22 },
               { name: "Filtro antipolen", qty: 1, price: 26 },
               { name: "Spray limpia evaporador", qty: 1, price: 12 },
-              { name: "Liga de freno DOT 4 250 ml", qty: 4, price: 68 },
-              { name: "Mano de obra", qty: 1, price: 180 }
+              { name: "Liga de freno DOT 4 (250 ml)", qty: 4, price: 68 }
             ],
             diagnostics: [
               "Diagnóstico de 40 puntos", "Funcionamiento y engrase de cerraduras", "Diagnóstico de batería",
@@ -359,54 +376,43 @@
       },
       duster_turbo: {
         name: "Duster 1,3T / Oroch Aut",
+        badge: "Motor 1.3 Turbo",
         tiers: {
           t1: {
             name: "Preventivo Básico",
-            kmLabel: "5.000 a 95.000 km",
-            kmList: ["5.000 km", "15.000 km", "25.000 km", "35.000 km", "45.000 km", "55.000 km", "65.000 km", "85.000 km", "95.000 km"],
+            kmRangeLabel: "5k, 15k, 25k, 35k, 45k, 55k, 65k, 75k, 85k, 95k",
             duration: "1.5 horas",
-            priceBs: 309.72,
-            priceDivisa: 278.75,
+            manoObra: 56,
             items: [
               { name: "Aceite 5W30", qty: 6, price: 156 },
               { name: "Filtro de aceite", qty: 1, price: 19 },
-              { name: "Arandela de T. de aceite", qty: 1, price: 17 },
+              { name: "Arandela de tapón de aceite", qty: 1, price: 17 },
               { name: "Engine clean", qty: 1, price: 15 },
-              { name: "Líquido limpia parabrisas", qty: 1, price: 4 },
-              { name: "Mano de obra", qty: 1, price: 56 }
+              { name: "Líquido limpiaparabrisas", qty: 1, price: 4 }
             ],
             diagnostics: [
-              "Diagnostico de 40 puntos", "Cambio de aceite", "Diagnóstico de batería",
-              "Diagnóstico computarizado", "Funcionamiento y engrase de cerraduras"
+              "Diagnóstico de 40 puntos", "Cambio de aceite", "Diagnóstico de batería",
+              "Diagnóstico computarizado (Clip)", "Funcionamiento y engrase de cerraduras"
             ]
           },
           t2: {
             name: "Mantenimiento Mayor",
-            kmLabel: "10.000 a 90.000 km",
-            kmList: ["10.000 km", "30.000 km", "50.000 km", "70.000 km", "90.000 km"],
+            kmRangeLabel: "10k, 30k, 40k, 50k, 60k, 70k, 80k, 90k",
             duration: "2.5 a 3.5 horas",
             hasInjectorOption: true,
-            sinIny: {
-              priceBs: 489.52,
-              priceDivisa: 440.57,
-              manoObra: 136
-            },
-            conIny: {
-              priceBs: 692.06,
-              priceDivisa: 622.85,
-              manoObra: 283.60
-            },
+            manoObraSinIny: 136,
+            manoObraConIny: 283.60,
             items: [
               { name: "Aceite 5W30", qty: 6, price: 156 },
               { name: "Filtro de aceite", qty: 1, price: 19 },
-              { name: "Arandela de T. de aceite", qty: 1, price: 17 },
+              { name: "Arandela de tapón de aceite", qty: 1, price: 17 },
               { name: "Engine clean", qty: 1, price: 15 },
-              { name: "Líquido limpia parabrisas", qty: 1, price: 4 },
+              { name: "Líquido limpiaparabrisas", qty: 1, price: 4 },
               { name: "Filtro de aire", qty: 1, price: 37 },
               { name: "Filtro antipolen", qty: 1, price: 26 },
               { name: "Spray limpia evaporador", qty: 1, price: 12 },
-              { name: "Limpia carburador", qty: 1, price: 12 },
-              { name: "Kit de inyectores", qty: 1, price: 15 }
+              { name: "Limpia carburador", qty: 1, price: 12, onlyWithInjectors: true },
+              { name: "Kit de inyectores", qty: 1, price: 15, onlyWithInjectors: true }
             ],
             diagnostics: [
               "Diagnóstico de 40 puntos", "Funcionamiento y engrase de cerraduras", "Diagnóstico de batería",
@@ -418,22 +424,19 @@
           },
           t3: {
             name: "Mantenimiento Integral",
-            kmLabel: "20.000 km | 100.000 km",
-            kmList: ["20.000 km", "100.000 km"],
+            kmRangeLabel: "20.000 km | 100.000 km",
             duration: "3.5 a 4 horas",
-            priceBs: 574.20,
-            priceDivisa: 516.78,
+            manoObra: 180,
             items: [
-              { name: "Aceite 5W30", qty: 5, price: 130 },
-              { name: "Filtro de aceite", qty: 1, price: 34.5 },
-              { name: "Arandela de T. de aceite", qty: 1, price: 3.5 },
+              { name: "Aceite 5W30", qty: 6, price: 156 },
+              { name: "Filtro de aceite", qty: 1, price: 19 },
+              { name: "Arandela de tapón de aceite", qty: 1, price: 17 },
               { name: "Engine clean", qty: 1, price: 15 },
-              { name: "Líquido limpia parabrisas", qty: 1, price: 4 },
-              { name: "Filtro de aire", qty: 1, price: 22 },
+              { name: "Líquido limpiaparabrisas", qty: 1, price: 4 },
+              { name: "Filtro de aire", qty: 1, price: 37 },
               { name: "Filtro antipolen", qty: 1, price: 26 },
               { name: "Spray limpia evaporador", qty: 1, price: 12 },
-              { name: "Liga de freno DOT 4 250 ml", qty: 4, price: 68 },
-              { name: "Mano de obra", qty: 1, price: 180 }
+              { name: "Liga de freno DOT 4 (250 ml)", qty: 4, price: 68 }
             ],
             diagnostics: [
               "Diagnóstico de 40 puntos", "Funcionamiento y engrase de cerraduras", "Diagnóstico de batería",
@@ -446,56 +449,45 @@
       },
       kwid: {
         name: "Kwid 1,0 CIL",
+        badge: "Motor 1.0L",
         tiers: {
           t1: {
             name: "Preventivo Básico",
-            kmLabel: "5.000 a 95.000 km",
-            kmList: ["5.000 km", "15.000 km", "25.000 km", "35.000 km", "45.000 km", "55.000 km", "65.000 km", "85.000 km", "95.000 km"],
+            kmRangeLabel: "5k, 15k, 25k, 35k, 45k, 55k, 65k, 75k, 85k, 95k",
             duration: "1.5 horas",
-            priceBs: 222.72,
-            priceDivisa: 200.45,
+            manoObra: 52,
             items: [
               { name: "Aceite 5W30", qty: 3, price: 78 },
               { name: "Filtro de aceite", qty: 1, price: 26 },
-              { name: "Arandela de T. de aceite", qty: 1, price: 17 },
+              { name: "Arandela de tapón de aceite", qty: 1, price: 17 },
               { name: "Engine clean", qty: 1, price: 15 },
-              { name: "Líquido limpia parabrisas", qty: 1, price: 4 },
-              { name: "Mano de obra", qty: 1, price: 52 }
+              { name: "Líquido limpiaparabrisas", qty: 1, price: 4 }
             ],
             diagnostics: [
               "Diagnóstico de 40 puntos", "Cambio de aceite", "Diagnóstico de batería",
-              "Diagnóstico computarizado", "Funcionamiento y engrase de cerraduras"
+              "Diagnóstico computarizado (Clip)", "Funcionamiento y engrase de cerraduras"
             ]
           },
           t2: {
             name: "Mantenimiento Mayor",
-            kmLabel: "10.000 a 90.000 km",
-            kmList: ["10.000 km", "30.000 km", "50.000 km", "70.000 km", "90.000 km"],
+            kmRangeLabel: "10k, 30k, 40k, 50k, 60k, 70k, 80k, 90k",
             duration: "2.5 a 3.5 horas",
             hasInjectorOption: true,
-            sinIny: {
-              priceBs: 446.32,
-              priceDivisa: 401.69,
-              manoObra: 144
-            },
-            conIny: {
-              priceBs: 603.20,
-              priceDivisa: 542.88,
-              manoObra: 230
-            },
+            manoObraSinIny: 144,
+            manoObraConIny: 230,
             items: [
               { name: "Aceite 5W30", qty: 3, price: 78 },
               { name: "Filtro de aceite", qty: 1, price: 26 },
-              { name: "Arandela de T. de aceite", qty: 1, price: 17 },
+              { name: "Arandela de tapón de aceite", qty: 1, price: 17 },
               { name: "Engine clean", qty: 1, price: 15 },
-              { name: "Líquido limpia parabrisas", qty: 1, price: 4 },
+              { name: "Líquido limpiaparabrisas", qty: 1, price: 4 },
               { name: "Filtro de aire", qty: 1, price: 17 },
               { name: "Filtro antipolen", qty: 1, price: 42 },
               { name: "Filtro de combustible", qty: 1, price: 35 },
               { name: "Spray limpia evaporador", qty: 1, price: 12 },
               { name: "Spray limpia frenos", qty: 1, price: 12 },
-              { name: "Limpia carburador", qty: 1, price: 12 },
-              { name: "Kit de inyectores", qty: 1, price: 20 }
+              { name: "Limpia carburador", qty: 1, price: 12, onlyWithInjectors: true },
+              { name: "Kit de inyectores", qty: 1, price: 20, onlyWithInjectors: true }
             ],
             diagnostics: [
               "Diagnóstico de 40 puntos", "Funcionamiento y engrase de cerraduras", "Diagnóstico de batería",
@@ -507,22 +499,19 @@
           },
           t3: {
             name: "Mantenimiento Integral",
-            kmLabel: "20.000 km | 100.000 km",
-            kmList: ["20.000 km", "100.000 km"],
+            kmRangeLabel: "20.000 km | 100.000 km",
             duration: "3.5 a 4 horas",
-            priceBs: 591.60,
-            priceDivisa: 532.44,
+            manoObra: 184,
             items: [
-              { name: "Aceite 5W30", qty: 3, price: 130 },
+              { name: "Aceite 5W30", qty: 3, price: 78 },
               { name: "Filtro de aceite", qty: 1, price: 31 },
-              { name: "Arandela de T. de aceite", qty: 1, price: "N/A" },
+              { name: "Arandela de tapón de aceite", qty: 1, price: 17 },
               { name: "Engine clean", qty: 1, price: 16 },
-              { name: "Líquido limpia parabrisas", qty: 1, price: 4 },
+              { name: "Líquido limpiaparabrisas", qty: 1, price: 4 },
               { name: "Filtro de aire", qty: 1, price: 34 },
               { name: "Filtro antipolen", qty: 1, price: 31 },
               { name: "Spray limpia evaporador", qty: 1, price: 12 },
-              { name: "Liga de freno DOT 4 250 ml", qty: 4, price: 68 },
-              { name: "Mano de obra", qty: 1, price: 184 }
+              { name: "Liga de freno DOT 4 (250 ml)", qty: 4, price: 68 }
             ],
             diagnostics: [
               "Diagnóstico de 40 puntos", "Funcionamiento y engrase de cerraduras", "Diagnóstico de batería",
@@ -534,56 +523,45 @@
         }
       },
       logan_stepway: {
-        name: "LOGAN 1,6 / Stepway 1,6",
+        name: "Logan / Stepway 1,6",
+        badge: "Motor 1.6L",
         tiers: {
           t1: {
             name: "Preventivo Básico",
-            kmLabel: "5.000 a 95.000 km",
-            kmList: ["5.000 km", "15.000 km", "25.000 km", "35.000 km", "45.000 km", "55.000 km", "65.000 km", "85.000 km", "95.000 km"],
+            kmRangeLabel: "5k, 15k, 25k, 35k, 45k, 55k, 65k, 75k, 85k, 95k",
             duration: "1.5 horas",
-            priceBs: 286.52,
-            priceDivisa: 257.87,
+            manoObra: 60,
             items: [
               { name: "Aceite 5W30", qty: 5, price: 130 },
               { name: "Filtro de aceite", qty: 1, price: 34.5 },
-              { name: "Arandela de T. de aceite", qty: 1, price: 4 },
+              { name: "Arandela de tapón de aceite", qty: 1, price: 4 },
               { name: "Engine clean", qty: 1, price: 15 },
-              { name: "Líquido limpia parabrisas", qty: 1, price: 4 },
-              { name: "Mano de obra", qty: 1, price: 60 }
+              { name: "Líquido limpiaparabrisas", qty: 1, price: 4 }
             ],
             diagnostics: [
               "Diagnóstico de 40 puntos", "Cambio de aceite", "Diagnóstico de batería",
-              "Diagnóstico computarizado", "Funcionamiento y engrase de cerraduras"
+              "Diagnóstico computarizado (Clip)", "Funcionamiento y engrase de cerraduras"
             ]
           },
           t2: {
             name: "Mantenimiento Mayor",
-            kmLabel: "10.000 a 90.000 km",
-            kmList: ["10.000 km", "30.000 km", "50.000 km", "70.000 km", "90.000 km"],
+            kmRangeLabel: "10k, 30k, 40k, 50k, 60k, 70k, 80k, 90k",
             duration: "2.5 a 3.5 horas",
             hasInjectorOption: true,
-            sinIny: {
-              priceBs: 448.92,
-              priceDivisa: 404.03,
-              manoObra: 140
-            },
-            conIny: {
-              priceBs: 585.80,
-              priceDivisa: 527.22,
-              manoObra: 228
-            },
+            manoObraSinIny: 140,
+            manoObraConIny: 228,
             items: [
               { name: "Aceite 5W30", qty: 5, price: 130 },
               { name: "Filtro de aceite", qty: 1, price: 34.5 },
-              { name: "Arandela de T. de aceite", qty: 1, price: 3.5 },
+              { name: "Arandela de tapón de aceite", qty: 1, price: 3.5 },
               { name: "Engine clean", qty: 1, price: 15 },
-              { name: "Líquido limpia parabrisas", qty: 1, price: 4 },
+              { name: "Líquido limpiaparabrisas", qty: 1, price: 4 },
               { name: "Filtro de aire", qty: 1, price: 22 },
               { name: "Filtro antipolen", qty: 1, price: 26 },
               { name: "Filtro de combustible", qty: 1, price: 12 },
               { name: "Spray limpia evaporador", qty: 1, price: 12 },
-              { name: "Limpia carburador", qty: 1, price: 15 },
-              { name: "Kit de inyectores", qty: 1, price: 15 }
+              { name: "Limpia carburador", qty: 1, price: 15, onlyWithInjectors: true },
+              { name: "Kit de inyectores", qty: 1, price: 15, onlyWithInjectors: true }
             ],
             diagnostics: [
               "Diagnóstico de 40 puntos", "Funcionamiento y engrase de cerraduras", "Diagnóstico de batería",
@@ -595,22 +573,19 @@
           },
           t3: {
             name: "Mantenimiento Integral",
-            kmLabel: "20.000 km | 100.000 km",
-            kmList: ["20.000 km", "100.000 km"],
+            kmRangeLabel: "20.000 km | 100.000 km",
             duration: "3.5 a 4 horas",
-            priceBs: 547.20,
-            priceDivisa: 516.78,
+            manoObra: 180,
             items: [
               { name: "Aceite 5W30", qty: 5, price: 130 },
               { name: "Filtro de aceite", qty: 1, price: 34.5 },
-              { name: "Arandela de T. de aceite", qty: 1, price: 3.5 },
+              { name: "Arandela de tapón de aceite", qty: 1, price: 3.5 },
               { name: "Engine clean", qty: 1, price: 15 },
-              { name: "Líquido limpia parabrisas", qty: 1, price: 4 },
+              { name: "Líquido limpiaparabrisas", qty: 1, price: 4 },
               { name: "Filtro de aire", qty: 1, price: 22 },
               { name: "Filtro antipolen", qty: 1, price: 26 },
               { name: "Spray limpia evaporador", qty: 1, price: 12 },
-              { name: "Liga de freno DOT 4 250 ml", qty: 4, price: 68 },
-              { name: "Mano de obra", qty: 1, price: 180 }
+              { name: "Liga de freno DOT 4 (250 ml)", qty: 4, price: 68 }
             ],
             diagnostics: [
               "Diagnóstico de 40 puntos", "Funcionamiento y engrase de cerraduras", "Diagnóstico de batería",
@@ -624,11 +599,33 @@
     };
 
     let currentModelKey = 'duster_16';
+    let currentKm = 5000;
     let currentTierKey = 't1';
     let includeInjectors = false;
 
+    function resolveTierFromKm(km) {
+      const rounded = Math.max(5000, Math.round(km / 5000) * 5000);
+      if (rounded % 10000 !== 0) {
+        return 't1';
+      }
+      if (rounded === 20000 || rounded === 100000 || (rounded > 100000 && rounded % 100000 === 0)) {
+        return 't3';
+      }
+      return 't2';
+    }
+
+    function formatCurrency(num) {
+      return '$' + num.toFixed(2).replace('.', ',');
+    }
+
+    function formatKm(num) {
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' km';
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('kmExactInput').value = currentKm;
       renderModelSelector();
+      renderKmGrid();
       renderTierSelector();
       updateDetailView();
     });
@@ -643,18 +640,20 @@
 
         const btn = document.createElement('button');
         btn.onclick = () => selectModel(key);
-        btn.className = `p-4 rounded-xl border text-left transition-all flex flex-col justify-between ${
-          isSelected 
-            ? 'border-slate-900 bg-slate-900 text-white shadow-md' 
-            : 'border-slate-200 bg-white hover:border-slate-300 text-slate-800'
+        btn.className = `p-4 rounded-xl border text-left transition-all flex flex-col justify-between cursor-pointer ${
+          isSelected
+            ? 'border-slate-950 bg-slate-950 text-white shadow-md ring-2 ring-[#FFCC00]/50'
+            : 'border-slate-200 bg-white hover:border-slate-400 text-slate-800'
         }`;
 
         btn.innerHTML = `
           <div class="flex items-center justify-between w-full mb-2">
-            <span class="text-xs uppercase font-bold tracking-wider ${isSelected ? 'text-amber-400' : 'text-slate-400'}">Renault</span>
-            <i class="ph-bold ${isSelected ? 'ph-check-circle text-amber-400' : 'ph-car text-slate-400'} text-lg"></i>
+            <span class="text-[11px] uppercase font-extrabold tracking-wider ${isSelected ? 'text-[#FFCC00]' : 'text-slate-400'}">
+              ${model.badge}
+            </span>
+            <i class="ph-bold ${isSelected ? 'ph-check-circle text-[#FFCC00]' : 'ph-car text-slate-400'} text-lg"></i>
           </div>
-          <span class="font-bold text-sm sm:text-base leading-tight">${model.name}</span>
+          <span class="font-extrabold text-sm sm:text-base leading-tight">${model.name}</span>
         `;
         container.appendChild(btn);
       });
@@ -667,15 +666,55 @@
       updateDetailView();
     }
 
+    function renderKmGrid() {
+      const container = document.getElementById('kmGridSelector');
+      container.innerHTML = '';
+
+      STANDARD_KM_INTERVALS.forEach(km => {
+        const isSelected = Number(currentKm) === km;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.onclick = () => selectStandardKm(km);
+        btn.className = `py-1.5 px-2 rounded-lg text-xs font-bold transition-all cursor-pointer border ${
+          isSelected
+            ? 'bg-slate-950 text-[#FFCC00] border-slate-950 shadow-sm'
+            : 'bg-white text-slate-700 border-slate-200 hover:border-slate-400 hover:bg-slate-100'
+        }`;
+        btn.textContent = (km / 1000) + 'k';
+        btn.title = formatKm(km);
+        container.appendChild(btn);
+      });
+    }
+
+    function selectStandardKm(km) {
+      currentKm = km;
+      document.getElementById('kmExactInput').value = km;
+      currentTierKey = resolveTierFromKm(km);
+      renderKmGrid();
+      renderTierSelector();
+      updateDetailView();
+    }
+
+    function handleExactKmInput(val) {
+      const parsed = parseInt(val, 10);
+      if (!isNaN(parsed) && parsed > 0) {
+        currentKm = parsed;
+        currentTierKey = resolveTierFromKm(parsed);
+        renderKmGrid();
+        renderTierSelector();
+        updateDetailView();
+      }
+    }
+
     function renderTierSelector() {
       const container = document.getElementById('tierContainer');
       container.innerHTML = '';
       const currentModel = MAINTENANCE_DATA[currentModelKey];
 
       const tiers = [
-        { id: 't1', title: 'Preventivo Básico', range: '5k | 15k | 25k... hasta 95k', icon: 'ph-shield-check' },
-        { id: 't2', title: 'Mantenimiento Mayor', range: '10k | 30k | 50k | 70k | 90k', icon: 'ph-wrench' },
-        { id: 't3', title: 'Mantenimiento Integral', range: '20.000 km | 100.000 km', icon: 'ph-star' }
+        { id: 't1', icon: 'ph-shield-check' },
+        { id: 't2', icon: 'ph-wrench' },
+        { id: 't3', icon: 'ph-star' }
       ];
 
       tiers.forEach(t => {
@@ -683,23 +722,25 @@
         const tierData = currentModel.tiers[t.id];
 
         const card = document.createElement('button');
-        card.onclick = () => selectTier(t.id);
-        card.className = `p-4 rounded-xl border text-left transition-all ${
-          isSelected 
-            ? 'border-amber-400 ring-2 ring-amber-400/40 bg-amber-50/20' 
-            : 'border-slate-200 bg-white hover:border-slate-300'
+        card.type = 'button';
+        card.onclick = () => selectTierManually(t.id);
+        card.className = `p-4 rounded-xl border text-left transition-all cursor-pointer relative ${
+          isSelected
+            ? 'border-slate-950 ring-2 ring-[#FFCC00] bg-amber-50/30 shadow-sm'
+            : 'border-slate-200 bg-white hover:border-slate-300 opacity-75 hover:opacity-100'
         }`;
 
         card.innerHTML = `
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs font-bold text-slate-500 uppercase tracking-wide flex items-center gap-1">
-              <i class="ph-bold ${t.icon} text-amber-500"></i> ${tierData.name}
+          <div class="flex items-center justify-between mb-1.5">
+            <span class="text-xs font-extrabold text-slate-900 uppercase tracking-wide flex items-center gap-1.5">
+              <i class="ph-bold ${t.icon} text-amber-500 text-base"></i> ${tierData.name}
             </span>
-            <span class="text-[10px] bg-slate-100 text-slate-600 font-bold px-2 py-0.5 rounded-full">
+            <span class="text-[10px] bg-slate-100 text-slate-700 font-bold px-2 py-0.5 rounded-full">
               ${tierData.duration}
             </span>
           </div>
-          <p class="font-black text-slate-900 text-base leading-snug">${t.range}</p>
+          <p class="text-xs font-medium text-slate-500 leading-relaxed">Intervalos: ${tierData.kmRangeLabel}</p>
+          ${isSelected ? '<span class="inline-block mt-2 text-[10px] font-extrabold uppercase tracking-wider bg-[#FFCC00] text-slate-950 px-2 py-0.5 rounded">Plan Seleccionado</span>' : ''}
         `;
         container.appendChild(card);
       });
@@ -713,8 +754,17 @@
       }
     }
 
-    function selectTier(tierId) {
+    function selectTierManually(tierId) {
       currentTierKey = tierId;
+      if (tierId === 't1' && resolveTierFromKm(currentKm) !== 't1') {
+        currentKm = 5000;
+      } else if (tierId === 't2' && resolveTierFromKm(currentKm) !== 't2') {
+        currentKm = 10000;
+      } else if (tierId === 't3' && resolveTierFromKm(currentKm) !== 't3') {
+        currentKm = 20000;
+      }
+      document.getElementById('kmExactInput').value = currentKm;
+      renderKmGrid();
       renderTierSelector();
       updateDetailView();
     }
@@ -730,76 +780,96 @@
       const btnCon = document.getElementById('btnConIny');
 
       if (!includeInjectors) {
-        btnSin.className = "px-3 py-1.5 rounded-md text-xs font-bold bg-slate-900 text-white shadow-sm";
-        btnCon.className = "px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900";
+        btnSin.className = "flex-1 sm:flex-initial px-3.5 py-2 rounded-md text-xs font-extrabold bg-slate-950 text-white shadow-sm cursor-pointer";
+        btnCon.className = "flex-1 sm:flex-initial px-3.5 py-2 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-950 cursor-pointer";
       } else {
-        btnSin.className = "px-3 py-1.5 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-900";
-        btnCon.className = "px-3 py-1.5 rounded-md text-xs font-bold bg-amber-400 text-slate-950 shadow-sm";
+        btnSin.className = "flex-1 sm:flex-initial px-3.5 py-2 rounded-md text-xs font-semibold text-slate-600 hover:text-slate-950 cursor-pointer";
+        btnCon.className = "flex-1 sm:flex-initial px-3.5 py-2 rounded-md text-xs font-extrabold bg-[#FFCC00] text-slate-950 shadow-sm cursor-pointer";
       }
+    }
+
+    function calculateTierTotals(tier) {
+      const activeItems = tier.items.filter(it => !it.onlyWithInjectors || (currentTierKey === 't2' && includeInjectors));
+      const itemsSum = activeItems.reduce((acc, it) => acc + (typeof it.price === 'number' ? it.price : 0), 0);
+
+      let manoObra = 0;
+      if (currentTierKey === 't2') {
+        manoObra = includeInjectors ? tier.manoObraConIny : tier.manoObraSinIny;
+      } else {
+        manoObra = tier.manoObra;
+      }
+
+      const totalBase = itemsSum + manoObra;
+      return { activeItems, manoObra, totalBase };
     }
 
     function updateDetailView() {
       const model = MAINTENANCE_DATA[currentModelKey];
       const tier = model.tiers[currentTierKey];
+      const { activeItems, manoObra, totalBase } = calculateTierTotals(tier);
 
+      const kmFormatted = formatKm(currentKm);
+      document.getElementById('selectedKmBadge').textContent = `Kilometraje: ${kmFormatted}`;
       document.getElementById('detailTitle').textContent = `${model.name} — ${tier.name}`;
-      document.getElementById('detailSubtitle').textContent = `Intervalos aplicables: ${tier.kmList.join(' | ')}`;
+      document.getElementById('detailSubtitle').textContent = `Duración estimada en taller: ${tier.duration}`;
+      document.getElementById('btnKmLabel').textContent = kmFormatted;
 
-      let priceBs = 0;
-      let priceDivisa = 0;
-      let manoObraPrice = 0;
+      // Actualizar precio principal
+      document.getElementById('totalPriceDisplay').textContent = formatCurrency(totalBase);
 
-      if (currentTierKey === 't2') {
-        const option = includeInjectors ? tier.conIny : tier.sinIny;
-        priceBs = option.priceBs;
-        priceDivisa = option.priceDivisa;
-        manoObraPrice = option.manoObra;
-      } else {
-        priceBs = tier.priceBs;
-        priceDivisa = tier.priceDivisa;
-      }
+      // Actualizar barra fija móvil
+      document.getElementById('mobileBarKm').textContent = kmFormatted;
+      document.getElementById('mobileBarPrice').textContent = formatCurrency(totalBase);
 
-      const ahorro = (priceBs - priceDivisa).toFixed(2);
-      document.getElementById('priceBs').textContent = `${priceBs.toFixed(2)}$`;
-      document.getElementById('priceDivisa').textContent = `${priceDivisa.toFixed(2)}$`;
-      document.getElementById('badgeAhorro').textContent = `¡Ahorras ${ahorro}$!`;
+      // Actualizar enlace contextual de WhatsApp
+      const inyectorText = currentTierKey === 't2' ? (includeInjectors ? ' (con limpieza de inyectores)' : ' (sin limpieza de inyectores)') : '';
+      const waMessage = encodeURIComponent(
+        `Hola VOLGAN Renault Chacao, cotice en la web el ${tier.name}${inyectorText} para mi ${model.name} con ${kmFormatted} (${formatCurrency(totalBase)}). Quisiera confirmar disponibilidad.`
+      );
+      const waUrl = `https://wa.me/584242105766?text=${waMessage}`;
+      document.getElementById('whatsappContextualBtn').href = waUrl;
+      document.getElementById('floatingWhatsappBtn').href = waUrl;
 
+      // Renderizar tabla de repuestos
       const tbody = document.getElementById('billableItemsTbody');
       tbody.innerHTML = '';
 
-      tier.items.forEach(it => {
+      activeItems.forEach(it => {
         const tr = document.createElement('tr');
         tr.className = "hover:bg-slate-50 transition-colors";
         tr.innerHTML = `
-          <td class="py-2.5 px-4 font-medium text-slate-800">${it.name}</td>
-          <td class="py-2.5 px-4 text-center text-slate-600">${it.qty}</td>
-          <td class="py-2.5 px-4 text-right font-bold text-slate-900">${typeof it.price === 'number' ? it.price + '$' : it.price}</td>
+          <td class="py-3 px-4 font-medium text-slate-800">${it.name}</td>
+          <td class="py-3 px-4 text-center text-slate-600 font-semibold">${it.qty}</td>
+          <td class="py-3 px-4 text-right font-bold text-slate-900">${typeof it.price === 'number' ? formatCurrency(it.price) : it.price}</td>
         `;
         tbody.appendChild(tr);
       });
 
-      if (currentTierKey === 't2') {
-        const trMo = document.createElement('tr');
-        trMo.className = "hover:bg-slate-50 font-semibold bg-amber-50/30";
-        trMo.innerHTML = `
-          <td class="py-2.5 px-4 text-slate-900">Mano de obra (${includeInjectors ? 'Con Limpieza Iny.' : 'Sin Limpieza Iny.'})</td>
-          <td class="py-2.5 px-4 text-center text-slate-600">1</td>
-          <td class="py-2.5 px-4 text-right font-bold text-slate-900">${manoObraPrice}$</td>
-        `;
-        tbody.appendChild(trMo);
-      }
+      // Fila de mano de obra
+      const trMo = document.createElement('tr');
+      trMo.className = "bg-amber-50/40 font-semibold";
+      const moLabel = currentTierKey === 't2'
+        ? `Mano de obra especializada (${includeInjectors ? 'Con Limpieza Iny.' : 'Sin Limpieza Iny.'})`
+        : 'Mano de obra especializada';
+      trMo.innerHTML = `
+        <td class="py-3 px-4 text-slate-950">${moLabel}</td>
+        <td class="py-3 px-4 text-center text-slate-600">1</td>
+        <td class="py-3 px-4 text-right font-extrabold text-slate-950">${formatCurrency(manoObra)}</td>
+      `;
+      tbody.appendChild(trMo);
 
+      // Renderizar diagnósticos incluidos
       const diagContainer = document.getElementById('diagnosticItemsContainer');
       diagContainer.innerHTML = '';
       tier.diagnostics.forEach(diag => {
         const div = document.createElement('div');
-        div.className = "flex items-center justify-between p-2.5 rounded-lg border border-slate-100 bg-slate-50/50 text-xs text-slate-700";
+        div.className = "flex items-center justify-between gap-2 p-2.5 rounded-lg border border-slate-100 bg-slate-50/70 text-xs text-slate-700";
         div.innerHTML = `
           <div class="flex items-center gap-2">
-            <i class="ph-bold ph-check text-emerald-600"></i>
-            <span>${diag}</span>
+            <i class="ph-bold ph-check text-emerald-600 shrink-0"></i>
+            <span class="font-medium">${diag}</span>
           </div>
-          <span class="text-[10px] font-bold text-emerald-700 bg-emerald-100/70 px-2 py-0.5 rounded uppercase tracking-wider">
+          <span class="text-[10px] font-extrabold text-emerald-700 bg-emerald-100/80 px-2 py-0.5 rounded uppercase tracking-wider shrink-0">
             Incluido
           </span>
         `;
@@ -807,59 +877,23 @@
       });
     }
 
-    function abrirModalKilometraje() {
+    function agendarEnCalendlyDirecto() {
       const model = MAINTENANCE_DATA[currentModelKey];
       const tier = model.tiers[currentTierKey];
+      const { totalBase } = calculateTierTotals(tier);
+      const kmFormatted = formatKm(currentKm);
+      const inyectorText = currentTierKey === 't2'
+        ? (includeInjectors ? ' (Con Limpieza de Inyectores)' : ' (Sin Limpieza de Inyectores)')
+        : '';
 
-      const quickChips = document.getElementById('quickKmChips');
-      quickChips.innerHTML = '';
-      tier.kmList.forEach(kmStr => {
-        const cleanNumber = kmStr.replace(/\D/g, '');
-        const chip = document.createElement('button');
-        chip.type = 'button';
-        chip.onclick = () => {
-          document.getElementById('inputKmUsuario').value = cleanNumber;
-        };
-        chip.className = "px-2 py-1 bg-slate-100 hover:bg-amber-100 hover:text-slate-950 text-slate-600 rounded text-[11px] font-medium transition-colors";
-        chip.textContent = kmStr;
-        quickChips.appendChild(chip);
-      });
-
-      document.getElementById('inputKmUsuario').value = '';
-      document.getElementById('modalKilometraje').classList.remove('hidden');
-      document.getElementById('modalKilometraje').classList.add('flex');
-    }
-
-    function cerrarModalKilometraje() {
-      document.getElementById('modalKilometraje').classList.add('hidden');
-      document.getElementById('modalKilometraje').classList.remove('flex');
-    }
-
-    function confirmarYAgendarCalendly() {
-      const kmInput = document.getElementById('inputKmUsuario').value.trim();
-
-      if (!kmInput || isNaN(kmInput) || Number(kmInput) <= 0) {
-        alert("Por favor, ingrese o seleccione el kilometraje que tiene su vehículo para continuar.");
-        document.getElementById('inputKmUsuario').focus();
-        return;
-      }
-
-      const model = MAINTENANCE_DATA[currentModelKey];
-      const tier = model.tiers[currentTierKey];
-
-      const inyectorText = currentTierKey === 't2' ? (includeInjectors ? ' (Con Limpieza de Inyectores)' : ' (Sin Limpieza de Inyectores)') : '';
-      
       const baseUrl = "https://calendly.com/renaultchacao/servicios";
       const params = new URLSearchParams({
         a1: model.name,
-        a2: `${kmInput} km`,
-        description: `Vehículo: ${model.name} | Kilometraje actual: ${kmInput} km | Plan: ${tier.name}${inyectorText}`
+        a2: kmFormatted,
+        description: `Vehículo: ${model.name} | Kilometraje: ${kmFormatted} | Plan: ${tier.name}${inyectorText} | Cotización: ${formatCurrency(totalBase)}`
       });
 
-      const fullUrl = `${baseUrl}?${params.toString()}`;
-
-      cerrarModalKilometraje();
-      window.open(fullUrl, '_blank');
+      window.open(`${baseUrl}?${params.toString()}`, '_blank');
     }
   </script>
 </body>
