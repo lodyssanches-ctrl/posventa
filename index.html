@@ -276,9 +276,9 @@
   </div>
 
   <!-- BOTÓN FLOTANTE DE CONSULTA POR WHATSAPP (ESCRITORIO) -->
-  <a id="floatingWhatsappBtn" href="https://wa.me/584242105766" target="_blank" class="hidden md:flex fixed bottom-6 right-6 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-full shadow-lg items-center gap-2 z-50 text-xs font-bold transition-all hover:scale-105">
+  <a id="floatingWhatsappBtn" href="https://wa.me/584228606000" target="_blank" class="hidden md:flex fixed bottom-6 right-6 bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-3 rounded-full shadow-lg items-center gap-2 z-50 text-xs font-bold transition-all hover:scale-105">
     <i class="ph-bold ph-whatsapp-logo text-xl"></i>
-    <span>¿Dudas? Chatea al +58 424 210 5766</span>
+    <span>¿Dudas? Chatea al +58 422 860 6000</span>
   </a>
 
   <!-- PIE DE PÁGINA -->
@@ -286,7 +286,7 @@
     <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
       <p>© 2026 Servicio Posventa RNLT Chacao — Taller Autorizado VOLGAN RENAULT CARE SERVICE.</p>
       <div class="flex items-center gap-4">
-        <span>Atención directa: +58 424 210 5766</span>
+        <span>Atención directa: +58 422 860 6000</span>
         <span>•</span>
         <a href="https://calendly.com/renaultchacao/servicios" target="_blank" class="text-slate-900 font-semibold underline">Portal Calendly</a>
       </div>
@@ -824,9 +824,9 @@
       // Actualizar enlace contextual de WhatsApp
       const inyectorText = currentTierKey === 't2' ? (includeInjectors ? ' (con limpieza de inyectores)' : ' (sin limpieza de inyectores)') : '';
       const waMessage = encodeURIComponent(
-        `Hola VOLGAN Renault Chacao, cotice en la web el ${tier.name}${inyectorText} para mi ${model.name} con ${kmFormatted} (${formatCurrency(totalBase)}). Quisiera confirmar disponibilidad.`
+        `Hola VOLGAN Renault Chacao, cotice en la web el ${tier.name}${inyectorText} para mi ${model.name} con ${kmFormatted} (${formatCurrency(totalBase)}). Quisiera aclarar ciertas dudas.`
       );
-      const waUrl = `https://wa.me/584242105766?text=${waMessage}`;
+      const waUrl = `https://wa.me/584228606000?text=${waMessage}`;
       document.getElementById('whatsappContextualBtn').href = waUrl;
       document.getElementById('floatingWhatsappBtn').href = waUrl;
 
